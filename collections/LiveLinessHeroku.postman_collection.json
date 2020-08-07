@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "dc686b69-2981-4cfa-af38-7edb6c77c153",
+		"name": "LiveLinessHeroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"juancholasso@hotmail.com\",\n\t\"password\":\"1234juan\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://livelinessprod.herokuapp.com/login",
+					"protocol": "https",
+					"host": [
+						"livelinessprod",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkdXNlciI6MSwiaWRkb2N1bWVudCI6IjEyMzM2OTE3MDYyIiwibmFtZSI6Ikp1YW4gUGFibG8iLCJsYXN0bmFtZSI6IkNhbWFyZ28gTGFzc28iLCJ0ZWxlcGhvbmUiOiIzMjIzNzM3MzI2IiwiaW1hZ2UiOiIyMDE5LTEyLTIxXzE3LTM5LTdfcGhvdG9Qcm9maWxlLmpwZWciLCJlbWFpbCI6Imp1YW5jaG9sYXNzb0Bob3RtYWlsLmNvbSIsIm5pY2tuYW1lIjoianVhbmNob2xhc3NvIn0sImlhdCI6MTU3Njk1MDQyOSwiZXhwIjoxNTc3MDM2ODI5fQ.6sihbGyeKwiLY9UXtoIs7QeFwMzFSvteRfGCrHWVLzk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://livelinessprod.herokuapp.com/api/users",
+					"protocol": "https",
+					"host": [
+						"livelinessprod",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"juancholassos@hotmail.com\",\n\t\"password\":\"1234juan\",\n\t\"name\":\"Juan Pablo\",\n\t\"lastname\":\"Camargo Lasso\",\n\t\"telephone\":\"3223737326\",\n\t\"iddocument\":\"123369217062\",\n\t\"nickname\":\"juancholassos\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://livelinessprod.herokuapp.com/signup",
+					"protocol": "https",
+					"host": [
+						"livelinessprod",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkdXNlciI6NCwicGFzc3dvcmQiOiIkMmIkMTAkNFlPcTZqeVlXS0pjUEllMUlkT29zLnBJTnNSMTAzeThPd292a1lVTTlTRUUuSTNZeTFmTDIiLCJuYW1lIjoiSnVhbiBQYWJsbyIsImxhc3RuYW1lIjoiQ2FtYXJnbyBMYXNzbyIsImVtYWlsIjoianVhbmNob2xhc3NvQGhvdG1haWwuY29tIiwidGVsZXBob25lIjoiMzIyMzczNzMyNiIsImlkZG9jdW1lbnQiOiIxMjMzNjkxNzA2MiIsInRva2VuIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmtZWFJoSWpwN0ltbGtkWE5sY2lJNk5Dd2ljR0Z6YzNkdmNtUWlPaUlrTW1Ja01UQWtORmxQY1RacWVWbFhTMHBqVUVsbE1VbGtUMjl6TG5CSlRuTlNNVEF6ZVRoUGQyOTJhMWxWVFRsVFJVVXVTVE5aZVRGbVRESWlMQ0p1WVcxbElqb2lTblZoYmlCUVlXSnNieUlzSW14aGMzUnVZVzFsSWpvaVEyRnRZWEpuYnlCTVlYTnpieUlzSW1WdFlXbHNJam9pYW5WaGJtTm9iMnhoYzNOdlFHaHZkRzFoYVd3dVkyOXRJaXdpZEdWc1pYQm9iMjVsSWpvaU16SXlNemN6TnpNeU5pSXNJbWxrWkc5amRXMWxiblFpT2lJeE1qTXpOamt4TnpBMk1pSXNJblJ2YTJWdUlqcHVkV3hzTENKamNtVmhkR1ZrUVhRaU9pSXlNREU1TFRFeUxURXhWREUyT2pBNE9qTXdMalV4TjFvaUxDSjFjR1JoZEdWa1FYUWlPaUl5TURFNUxURXlMVEV4VkRFMk9qUTBPakExTGpVM05Wb2lmU3dpYVdGMElqb3hOVGMyTWpVeU1ESXpMQ0psZUhBaU9qRTFOell6TXpnME1qTjkudTVwcGxtVjlwcGlNcThVaGN1aGN4OWNmeUc5Y0kzbDM1Qy1QQ3dIYi15NCIsImNyZWF0ZWRBdCI6IjIwMTktMTItMTFUMTY6MDg6MzAuNTE3WiIsInVwZGF0ZWRBdCI6IjIwMTktMTItMTNUMTU6NDc6MDMuODQ4WiJ9LCJpYXQiOjE1NzYyNTIxNzAsImV4cCI6MTU3NjMzODU3MH0.TZIV1HxMZ--Gb-Tz3Oit0h3CYzV9fPba5NGTZL2IdKg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://livelinessprod.herokuapp.com/api/logout",
+					"protocol": "https",
+					"host": [
+						"livelinessprod",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Uploadphoto Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkdXNlciI6MSwiaWRkb2N1bWVudCI6IjEyMzM2OTE3MDYyIiwibmFtZSI6Ikp1YW4gUGFibG8iLCJsYXN0bmFtZSI6IkNhbWFyZ28gTGFzc28iLCJ0ZWxlcGhvbmUiOiIzMjIzNzM3MzI2IiwiaW1hZ2UiOiIyMDE5LTEyLTIxXzE3LTM5LTdfcGhvdG9Qcm9maWxlLmpwZWciLCJlbWFpbCI6Imp1YW5jaG9sYXNzb0Bob3RtYWlsLmNvbSIsIm5pY2tuYW1lIjoianVhbmNob2xhc3NvIn0sImlhdCI6MTU3Njk1MDQyOSwiZXhwIjoxNTc3MDM2ODI5fQ.6sihbGyeKwiLY9UXtoIs7QeFwMzFSvteRfGCrHWVLzk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/home/juanpablo/Pictures/Pepe.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://livelinessprod.herokuapp.com/api/users/uploadphoto",
+					"protocol": "https",
+					"host": [
+						"livelinessprod",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"uploadphoto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPhoto Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://livelinessprod.herokuapp.com/public/uploads/imagesprofiles/2019-12-21_17-48-26_photoProfile.jpeg",
+					"protocol": "https",
+					"host": [
+						"livelinessprod",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"public",
+						"uploads",
+						"imagesprofiles",
+						"2019-12-21_17-48-26_photoProfile.jpeg"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
